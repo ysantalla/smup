@@ -1,0 +1,15 @@
+version: "3.3"
+
+volumes: 
+  mongodb:
+
+services:
+  mongodb:
+    image: mongo
+    volumes:
+      - mongodb:/var/lib/mongodb
+    ports:
+      - 27017:27017
+    env_file:
+      - ../server/.env
+    restart: always  
