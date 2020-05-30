@@ -1,4 +1,4 @@
-## App Kueski sample
+## App SMUP sample
 
 ### Tecnologies
 

@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   envName: 'Development',
-  appName: 'Kueski App',
+  appName: 'Smup App',
   apiURL: 'http://localhost:3000'
 };
 

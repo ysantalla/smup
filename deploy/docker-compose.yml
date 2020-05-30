@@ -7,31 +7,26 @@ networks:
       - subnet: 172.16.238.0/24
 
 volumes:
-  postgres:
   client:
   server:
+  mongodb:
 
 services:
-  redis:
-    image: redis:latest
-    networks:
-      - private
+  mongodb:
+    image: mongo
+    volumes:
+      - mongodb:/var/lib/mongodb
     ports:
-      - 6399:6379
-    command: redis-server
-  postgres:
-    # TypeORM fails with Postgres v.12
-    image: postgres:11.3
-    ports:
-      - 5455:5432
+      - 27017:27017
     env_file:
-      - ../server/.env_prod
+      - ../server/.env
+    restart: always  
     networks:
       - private
   server:
     image: node:12.15.0-alpine
     depends_on:
-      - "postgres"
+      - "mongodb"
     networks:
       - "private"
     ports:

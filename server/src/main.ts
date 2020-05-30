@@ -22,10 +22,10 @@ async function bootstrap() {
   );
 
   const options = new DocumentBuilder()
-    .setTitle('Kueski example')
-    .setDescription('The kueski API description')
+    .setTitle('Smup example')
+    .setDescription('The smup API description')
     .setVersion('1.0')
-    .addTag('kueski')
+    .addTag('smup')
     .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, options);
